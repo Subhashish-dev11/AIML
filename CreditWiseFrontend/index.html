@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreditWise | Loan Approval</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="brand">
+            <div class="brand-mark">CW</div>
+            <div>
+                <h1>CreditWise</h1>
+                <span>Smart Loan Assessment</span>
+            </div>
+        </div>
+        <div class="status"><span></span> AI Assessment System</div>
+    </header>
+
+    <main class="page">
+        <section class="hero">
+            <div>
+                <p class="eyebrow">LOAN APPROVAL PREDICTION</p>
+                <h2>Make smarter lending decisions.</h2>
+                <p class="hero-text">
+                    Enter an applicant's financial and personal information.
+                    CreditWise will send the application to the machine-learning model
+                    and return an approval prediction with confidence.
+                </p>
+            </div>
+            <div class="hero-card">
+                <div class="hero-icon">✓</div>
+                <strong>ML Powered</strong>
+                <span>Gradient Boosting</span>
+            </div>
+        </section>
+
+        <div class="layout">
+            <form id="loanForm" class="application-card">
+                <div class="card-heading">
+                    <div>
+                        <p class="section-label">APPLICATION</p>
+                        <h3>Applicant Information</h3>
+                    </div>
+                    <span class="required-note">* Required</span>
+                </div>
+
+                <div class="progress">
+                    <div id="progressBar"></div>
+                </div>
+
+                <section class="form-section">
+                    <div class="section-title">
+                        <span>01</span>
+                        <div>
+                            <h4>Personal Details</h4>
+                            <p>Basic information about the applicant.</p>
+                        </div>
+                    </div>
+
+                    <div class="form-grid">
+                        <label>
+                            <span>Age *</span>
+                            <input type="number" name="Age" min="18" max="100" placeholder="e.g. 32" required>
+                        </label>
+
+                        <label>
+                            <span>Gender *</span>
+                            <select name="Gender" required>
+                                <option value="">Select gender</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            <span>Marital Status *</span>
+                            <select name="Marital_Status" required>
+                                <option value="">Select status</option>
+                                <option>Single</option>
+                                <option>Married</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            <span>Dependents *</span>
+                            <input type="number" name="Dependents" min="0" max="20" placeholder="e.g. 1" required>
+                        </label>
+
+                        <label>
+                            <span>Education Level *</span>
+                            <select name="Education_Level" required>
+                                <option value="">Select education</option>
+                                <option>High School</option>
+                                <option>Graduate</option>
+                                <option>Postgraduate</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            <span>Employment Status *</span>
+                            <select name="Employment_Status" required>
+                                <option value="">Select employment</option>
+                                <option>Salaried</option>
+                                <option>Self-Employed</option>
+                                <option>Unemployed</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            <span>Employer Category *</span>
+                            <select name="Employer_Category" required>
+                                <option value="">Select category</option>
+                                <option>Private</option>
+                                <option>Government</option>
+                                <option>Business</option>
+                                <option>Not Applicable</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            <span>Property Area *</span>
+                            <select name="Property_Area" required>
+                                <option value="">Select area</option>
+                                <option>Urban</option>
+                                <option>Semiurban</option>
+                                <option>Rural</option>
+                            </select>
+                        </label>
+                    </div>
+                </section>
+
+                <section class="form-section">
+                    <div class="section-title">
+                        <span>02</span>
+                        <div>
+                            <h4>Financial Profile</h4>
+                            <p>Income, savings and existing financial commitments.</p>
+                        </div>
+                    </div>
+
+                    <div class="form-grid">
+                        <label>
+                            <span>Applicant Income *</span>
+                            <div class="input-unit">
+                                <b>₹</b>
+                                <input type="number" name="Applicant_Income" min="0" step="0.01" placeholder="12000" required>
+                            </div>
+                        </label>
+
+                        <label>
+                            <span>Coapplicant Income *</span>
+                            <div class="input-unit">
+                                <b>₹</b>
+                                <input type="number" name="Coapplicant_Income" min="0" step="0.01" placeholder="4000" required>
+                            </div>
+                        </label>
+
+                        <label>
+                            <span>Savings *</span>
+                            <div class="input-unit">
+                                <b>₹</b>
+                                <input type="number" name="Savings" min="0" step="0.01" placeholder="15000" required>
+                            </div>
+                        </label>
+
+                        <label>
+                            <span>Existing Loans *</span>
+                            <input type="number" name="Existing_Loans" min="0" max="50" placeholder="e.g. 1" required>
+                        </label>
+
+                        <label>
+                            <span>Credit Score *</span>
+                            <input type="number" name="Credit_Score" min="300" max="900" placeholder="e.g. 720" required>
+                        </label>
+
+                        <label>
+                            <span>DTI Ratio *</span>
+                            <input type="number" name="DTI_Ratio" min="0" max="1" step="0.01" placeholder="e.g. 0.25" required>
+                            <small>Enter a decimal between 0 and 1.</small>
+                        </label>
+
+                        <label>
+                            <span>Collateral Value *</span>
+                            <div class="input-unit">
+                                <b>₹</b>
+                                <input type="number" name="Collateral_Value" min="0" step="0.01" placeholder="40000" required>
+                            </div>
+                        </label>
+                    </div>
+                </section>
+
+                <section class="form-section">
+                    <div class="section-title">
+                        <span>03</span>
+                        <div>
+                            <h4>Loan Details</h4>
+                            <p>Details about the requested loan.</p>
+                        </div>
+                    </div>
+
+                    <div class="form-grid">
+                        <label>
+                            <span>Loan Amount *</span>
+                            <div class="input-unit">
+                                <b>₹</b>
+                                <input type="number" name="Loan_Amount" min="0" step="0.01" placeholder="20000" required>
+                            </div>
+                        </label>
+
+                        <label>
+                            <span>Loan Term (months) *</span>
+                            <input type="number" name="Loan_Term" min="1" max="480" placeholder="e.g. 60" required>
+                        </label>
+
+                        <label>
+                            <span>Loan Purpose *</span>
+                            <select name="Loan_Purpose" required>
+                                <option value="">Select purpose</option>
+                                <option>Home</option>
+                                <option>Education</option>
+                                <option>Business</option>
+                                <option>Personal</option>
+                                <option>Vehicle</option>
+                                <option>Medical</option>
+                            </select>
+                        </label>
+                    </div>
+                </section>
+
+                <div id="errorBox" class="error-box" hidden></div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span>Assess Loan Application</span>
+                    <span class="arrow">→</span>
+                </button>
+
+                <p class="privacy-note">
+                    This demo is for educational purposes. A prediction should not be treated
+                    as a final lending decision.
+                </p>
+            </form>
+
+            <aside class="result-card" id="resultCard">
+                <div class="result-placeholder" id="placeholder">
+                    <div class="result-icon">⌁</div>
+                    <h3>Your result will appear here</h3>
+                    <p>Complete the application and click <b>Assess Loan Application</b>.</p>
+                </div>
+
+                <div class="result-content" id="resultContent" hidden>
+                    <p class="section-label">ASSESSMENT RESULT</p>
+                    <div id="decisionBadge" class="decision-badge"></div>
+                    <h3 id="decisionTitle"></h3>
+                    <p id="decisionMessage"></p>
+
+                    <div class="score">
+                        <div class="score-top">
+                            <span>Approval Probability</span>
+                            <strong id="probabilityText">0%</strong>
+                        </div>
+                        <div class="score-track">
+                            <div id="probabilityBar"></div>
+                        </div>
+                    </div>
+
+                    <div class="result-grid">
+                        <div>
+                            <span>Model</span>
+                            <strong id="modelName">Gradient Boosting</strong>
+                        </div>
+                        <div>
+                            <span>Status</span>
+                            <strong id="decisionSmall"></strong>
+                        </div>
+                    </div>
+
+                    <button type="button" class="reset-btn" id="resetBtn">Start New Assessment</button>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <p>CreditWise • Machine Learning Loan Approval System</p>
+        <p>Built with HTML, CSS, JavaScript &amp; Python ML</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
